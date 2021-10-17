@@ -9,6 +9,14 @@
   font-family: "Work Sans", sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+}
+
+.m-main {
+  margin-top: 67px;
+}
+
 body {
   position: relative;
   -webkit-transition: 0.5s ease;
@@ -92,6 +100,11 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   padding: 0.5rem 3rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 #navbar > * {
@@ -102,7 +115,7 @@ h2 {
   #navbar > *:nth-child(2) {
     width: 20%;
   }
-  #navbar > *:nth-child(4) {
+  #navbar > *:nth-child(3) {
     width: 80%;
   }
 }

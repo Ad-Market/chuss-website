@@ -12,6 +12,14 @@ $color1: #ac227e;
 $color2: #7f2b80;
 $color-grey: #c4c4c4;
 
+html {
+  overflow-x: hidden;
+}
+
+.m-main {
+  margin-top: 67px;
+}
+
 body {
   position: relative;
   transition: 0.5s ease;
@@ -86,6 +94,10 @@ h2 {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 3rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
 
   & > * {
     width: 33.33%;
@@ -95,7 +107,7 @@ h2 {
         width: 20%;
       }
 
-      &:nth-child(4) {
+      &:nth-child(3) {
         width: 80%;
       }
     }

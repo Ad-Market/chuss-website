@@ -11,6 +11,7 @@ function App() {
     <>
       <Router>
         <Navbar />
+        <div className="m-main"></div>
         <Switch>
           <Route exact path="/">
             <Dashboard />
