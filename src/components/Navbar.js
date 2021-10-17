@@ -1,43 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import $ from "jquery";
 
 import Hamburger from "../assets/hamburger.png";
 
-const Navbar = () => {
-  const toggleSideBarHandler = (e) => {
-    e.preventDefault();
-    if ($(".sidenav").hasClass("show")) {
-      $("body").attr("style", "transform: translateX(0)");
-      $(".sidenav").removeClass("show");
-    } else {
-      $("body").attr(
-        "style",
-        "transform: translateX(" + $(".sidenav").outerWidth() + "px)"
-      );
-      $(".sidenav").addClass("show");
-    }
-  };
-
+const Navbar = ({ toggleSideBarHandler }) => {
   return (
     <>
       <div className={`dark-overlay`}></div>
-      <div className="sidenav">
-        <div id="close" onClick={toggleSideBarHandler}>
-          &times;
-        </div>
-        <ul className="nav-sm">
-          <li onClick={toggleSideBarHandler}>
-            <Link to="/">Dashboard</Link>
-          </li>
-          <li onClick={toggleSideBarHandler}>
-            <Link to="/watchlist">Watchlist</Link>
-          </li>
-          <li onClick={toggleSideBarHandler}>
-            <Link to="/trade-journal">Trade Journal</Link>
-          </li>
-        </ul>
-      </div>
+
       <nav id="navbar">
         <div>
           <img
