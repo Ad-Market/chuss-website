@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -5,11 +6,31 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  position: relative;
 }
 
 h2 {
   max-width: 448px;
   text-align: center;
+}
+
+.dark-overlay {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.501);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.dark-overlay.active {
+  left: 0;
 }
 
 #navbar {
@@ -30,8 +51,29 @@ h2 {
   width: 33.33%;
 }
 
+@media screen and (max-width: 992px) {
+  #navbar > *:nth-child(2) {
+    width: 20%;
+  }
+  #navbar > *:nth-child(4) {
+    width: 80%;
+  }
+}
+
 #navbar * {
   color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+  #navbar * {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #navbar * {
+    font-size: 0.65rem;
+  }
 }
 
 #navbar .menu {
@@ -50,6 +92,12 @@ h2 {
   transition: 0.5s ease;
 }
 
+@media screen and (max-width: 575px) {
+  #navbar .sidenav {
+    width: 90%;
+  }
+}
+
 #navbar .sidenav.active {
   left: 0;
 }
@@ -59,7 +107,7 @@ h2 {
   right: 1rem;
   top: 1rem;
   font-size: 3rem;
-  font-weight: 900;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -75,8 +123,24 @@ h2 {
           align-items: center;
 }
 
-#navbar .nav li {
-  margin: 0 0.5rem;
+@media screen and (max-width: 992px) {
+  #navbar .nav {
+    display: none;
+  }
+}
+
+#navbar .nav li a {
+  margin: 1rem;
+}
+
+#navbar .nav-sm {
+  margin-top: 5rem;
+}
+
+#navbar .nav-sm li a {
+  font-size: 1rem;
+  margin: 1rem;
+  display: block;
 }
 
 #navbar .btns-container {
@@ -89,6 +153,13 @@ h2 {
   padding-left: 3rem;
   display: inline-block;
   margin: 0.25rem;
+}
+
+@media screen and (max-width: 490px) {
+  #navbar .btns-container .btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.575rem;
+  }
 }
 
 h1 {
