@@ -1,38 +1,196 @@
-.App {
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+h2 {
+  max-width: 448px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#navbar {
+  background-color: #ac227e;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 3rem;
 }
 
-.App-link {
-  color: #61dafb;
+#navbar > * {
+  width: 33.33%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+#navbar * {
+  color: #fff;
+}
+
+#navbar .menu {
+  width: 40px;
+  cursor: pointer;
+}
+
+#navbar .sidenav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  background-color: #ac227e;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+#navbar .sidenav.active {
+  left: 0;
+}
+
+#navbar .sidenav #close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 3rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+#navbar .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#navbar .nav li {
+  margin: 0 0.5rem;
+}
+
+#navbar .btns-container {
+  text-align: right;
+}
+
+#navbar .btns-container .btn {
+  background-color: #7f2b80;
+  padding: 0.75rem 2rem;
+  padding-left: 3rem;
+  display: inline-block;
+  margin: 0.25rem;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.shapes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.shapes > * {
+  background-color: #c4c4c4;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.shapes .rectangle-1 {
+  width: 582px;
+  height: 381px;
+}
+
+.shapes .circle {
+  width: 434px;
+  height: 420px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 525px) {
+  .shapes .circle {
+    width: 85vw;
+    height: 85vw;
   }
 }
+
+.shapes .rectangle-2 {
+  width: 1151px;
+  height: 406px;
+}
+
+.shapes .rectangle-bg {
+  width: 1172px;
+  height: 856px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.shapes .rectangle-md {
+  width: 1156px;
+  height: 688px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#trade-journal,
+#watchlist,
+#dashboard {
+  padding: 1rem;
+}
+
+.trade-btn {
+  background-color: #c4c4c4;
+  border: none;
+  font-size: 1rem;
+  font-weight: 800;
+  margin-left: 1rem;
+}
+
+@media screen and (min-width: 450px) {
+  #trade-journal h1 {
+    margin-bottom: -2rem;
+  }
+}
+
+#trade-journal .container {
+  max-width: 1156px;
+  margin-left: auto;
+}
+/*# sourceMappingURL=App.css.map */
