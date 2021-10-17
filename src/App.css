@@ -11,6 +11,8 @@
 
 body {
   position: relative;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 h2 {
@@ -31,6 +33,51 @@ h2 {
 
 .dark-overlay.active {
   left: 0;
+}
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #ac227e;
+  -webkit-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+}
+
+.sidenav * {
+  color: #fff;
+}
+
+@media screen and (max-width: 575px) {
+  .sidenav {
+    width: 90vw;
+    left: -90vw;
+  }
+}
+
+.sidenav.active {
+  left: 0;
+}
+
+.sidenav #close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sidenav .nav-sm {
+  margin-top: 5rem;
+}
+
+.sidenav .nav-sm li a {
+  font-size: 1rem;
+  margin: 1rem;
+  display: block;
 }
 
 #navbar {
@@ -81,36 +128,6 @@ h2 {
   cursor: pointer;
 }
 
-#navbar .sidenav {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 300px;
-  height: 100%;
-  background-color: #ac227e;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-}
-
-@media screen and (max-width: 575px) {
-  #navbar .sidenav {
-    width: 90%;
-  }
-}
-
-#navbar .sidenav.active {
-  left: 0;
-}
-
-#navbar .sidenav #close {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  font-size: 3rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
 #navbar .nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -131,16 +148,6 @@ h2 {
 
 #navbar .nav li a {
   margin: 1rem;
-}
-
-#navbar .nav-sm {
-  margin-top: 5rem;
-}
-
-#navbar .nav-sm li a {
-  font-size: 1rem;
-  margin: 1rem;
-  display: block;
 }
 
 #navbar .btns-container {
@@ -263,5 +270,6 @@ h1 {
 #trade-journal .container {
   max-width: 1156px;
   margin-left: auto;
+  margin-right: auto;
 }
 /*# sourceMappingURL=App.css.map */

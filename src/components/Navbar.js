@@ -1,37 +1,44 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import $ from "jquery";
 
 import Hamburger from "../assets/hamburger.png";
 
 const Navbar = () => {
-  const [isSideNavActive, setIsSideNavActive] = useState(false);
-
   const toggleSideBarHandler = (e) => {
     e.preventDefault();
-
-    setIsSideNavActive((prevState) => !prevState);
+    if ($(".sidenav").hasClass("show")) {
+      $("body").attr("style", "transform: translateX(0)");
+      $(".sidenav").removeClass("show");
+    } else {
+      $("body").attr(
+        "style",
+        "transform: translateX(" + $(".sidenav").outerWidth() + "px)"
+      );
+      $(".sidenav").addClass("show");
+    }
   };
 
   return (
     <>
-      <div className={`dark-overlay ${isSideNavActive ? " active" : ""}`}></div>
-      <nav id="navbar">
-        <div className={`sidenav${isSideNavActive ? " active" : ""}`}>
-          <div id="close" onClick={toggleSideBarHandler}>
-            &times;
-          </div>
-          <ul className="nav-sm">
-            <li onClick={toggleSideBarHandler}>
-              <Link to="/">Dashboard</Link>
-            </li>
-            <li onClick={toggleSideBarHandler}>
-              <Link to="/watchlist">Watchlist</Link>
-            </li>
-            <li onClick={toggleSideBarHandler}>
-              <Link to="/trade-journal">Trade Journal</Link>
-            </li>
-          </ul>
+      <div className={`dark-overlay`}></div>
+      <div className="sidenav">
+        <div id="close" onClick={toggleSideBarHandler}>
+          &times;
         </div>
+        <ul className="nav-sm">
+          <li onClick={toggleSideBarHandler}>
+            <Link to="/">Dashboard</Link>
+          </li>
+          <li onClick={toggleSideBarHandler}>
+            <Link to="/watchlist">Watchlist</Link>
+          </li>
+          <li onClick={toggleSideBarHandler}>
+            <Link to="/trade-journal">Trade Journal</Link>
+          </li>
+        </ul>
+      </div>
+      <nav id="navbar">
         <div>
           <img
             onClick={toggleSideBarHandler}
